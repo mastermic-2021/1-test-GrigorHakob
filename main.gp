@@ -9,6 +9,12 @@ decode(v) = {
 text=readstr("input.txt")[1];
 k=encode("haricot");
 
+text=encode(text);
+decrypte(m,k) = vector(#m,i,(m[i] - k[ (i-1) % #k + 1]) % 27);
+clair=decrypte(text,k);
+clair=decode(clair);
+
+print( clair );
 
 \\ resoudre l'exercice, bien mettre des ; a la fin des lignes
 
